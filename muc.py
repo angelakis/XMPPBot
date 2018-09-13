@@ -12,6 +12,8 @@ import sleekxmpp
 def get_page_title(url):
     sourceCode = requests.get(url).text
     soup = BeautifulSoup(sourceCode, 'html.parser')
+    if soup.title is None:
+        return ""
     return soup.title.string
 
 
@@ -59,8 +61,11 @@ class LinkPreviewBot(sleekxmpp.ClientXMPP):
             return
         url_in_message = re.search("(?P<url>https?://[^\s]+)", msg['body'])
         if url_in_message is not None:
+            title = get_page_title(url_in_message.group('url'))
+            if not title:
+                return
             self.send_message(mto=msg['from'].bare,
-                              mbody=get_page_title(url_in_message.group('url')),
+                              mbody=title,
                               mtype='groupchat')
 
 
