@@ -10,7 +10,10 @@ import requests
 import sleekxmpp
 
 def get_page_title(url):
-    sourceCode = requests.get(url).text
+    try:
+        sourceCode = requests.get(url).text
+    except:
+        return ""
     soup = BeautifulSoup(sourceCode, 'html.parser')
     if soup.title is None:
         return ""
