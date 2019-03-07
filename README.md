@@ -8,7 +8,7 @@ USAGE
 -----
 Use pip to install requirements.txt.
 
-```bash
+```
 Usage: muc.py [options]
 
 Options:
@@ -26,7 +26,7 @@ Options:
 USING DOCKER
 ------------
 To run with docker issue the following commands:
-```bash
+```
 # docker build -t xmpp-bot .
 # docker run -it xmpp-bot
 ```
