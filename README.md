@@ -8,6 +8,14 @@ SETUP
 -----
 Use pip to install requirements.txt
 
+USING DOCKER
+------------
+To run with docker issue the following commands:
+```bash
+# docker build -t xmpp-bot .
+# docker run -it xmpp-bot
+```
+
 LICENSE
 -------
 
