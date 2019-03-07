@@ -4,9 +4,24 @@ A link preview bot for jabber multi-user chatrooms
 
 The bot extracts the URL from any message posted and posts the page title.
 
-SETUP
+USAGE
 -----
-Use pip to install requirements.txt
+Use pip to install requirements.txt.
+
+```bash
+Usage: muc.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -q, --quiet           set logging to ERROR
+  -d, --debug           set logging to DEBUG
+  -v, --verbose         set logging to COMM
+  -j JID, --jid=JID     JID to use
+  -p PASSWORD, --password=PASSWORD
+                        password to use
+  -r ROOM, --room=ROOM  MUC room to join
+  -n NICK, --nick=NICK  MUC nickname
+```
 
 USING DOCKER
 ------------
